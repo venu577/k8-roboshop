@@ -9,7 +9,7 @@ metadata:
     tier: app
 data:
   CART_ENDPOINT: "cart:8080"
-  DB_HOST: "mysql"  
+  DB_HOST: "mysql"
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -20,7 +20,7 @@ metadata:
   labels:
     component: shipping
     project: roboshop
-    tier: app  
+    tier: app
 spec:
   replicas: 1
   # These are the labels replica set use to create pod replicas, this should match pod labels
@@ -28,8 +28,8 @@ spec:
     matchLabels:
       component: shipping
       project: roboshop
-      tier: app 
-  # This is pod definition       
+      tier: app
+  # This is pod definition
   template:
     metadata:
       labels:
@@ -42,8 +42,7 @@ spec:
         image: venuuu/shipping:v1
         envFrom:
         - configMapRef:
-            name: shipping  
-
+            name: shipping
 ---
 apiVersion: v1
 kind: Service
@@ -61,10 +60,5 @@ spec:
     tier: app
   ports:
   - protocol: TCP
-    port: 8080 #container port
-    targetPort: 8080 #targetport 
-
-
-
-
-
+    port: 8080 # service port
+    targetPort: 8080 # container port
