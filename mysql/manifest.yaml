@@ -39,6 +39,9 @@ spec:
       containers:
       - name: mysql
         image: venuuu/mysql:v1
+        envFrom:
+        - secretRef:
+            name: mysql
 
 ---
 apiVersion: v1
