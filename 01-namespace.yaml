@@ -1,0 +1,7 @@
+apiVersion: v1 #version v should be capital V
+kind: Namespace
+metadata:
+ name: roboshop
+ labels:
+    project: roboshop
+    environment: dev
