@@ -8,11 +8,11 @@ metadata:
     project: roboshop
     tier: app
 data:
-  CART_HOST: cart
-  CART_PORT: 8080
-  USER_HOST: user
-  USER_PORT: 8080
-  AMQP_HOST: rabbitmq
+  CART_HOST: "cart"
+  CART_PORT: "8080"
+  USER_HOST: "user"
+  USER_PORT: "8080"
+  AMQP_HOST: "rabbitmq"
 ---
 apiVersion: v1
 kind: Secret
